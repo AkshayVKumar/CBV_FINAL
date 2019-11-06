@@ -1,0 +1,11 @@
+{% extends 'cbv_demo/base.html' %}
+
+{% block body_block %}
+<ol>
+{% for school in schools %}
+
+<li><a href="{{school.id}}">{{school}}</a></li>
+
+{% endfor %}
+</ol>
+{% endblock body_block %}

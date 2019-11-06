@@ -1,0 +1,22 @@
+{% extends "cbv_demo/base.html" %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+    {% if not form.instance.pk %}
+    <h1>CREATE VIEW</h1>
+      
+    {% else %}
+    <h1>UPDATE VIEW</h1>
+      
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+
+</div>
+
+  
+{% endblock%}

@@ -1,0 +1,24 @@
+{% extends 'cbv_demo/base.html' %}
+
+{% block body_block %}
+<h1>School Details</h1>
+<br>
+<ul>
+    <h3>
+    <li>Name of School : {{school_detail.name}}</li>
+    <li>Name of Principal : {{school_detail.principal}}</li>
+    <li>Name of location : {{school_detail.location}}</li>
+    </h3>
+</ul>
+<h2>Students Data</h2>
+<br>
+
+{% for student in school_detail.students.all %}
+<h3>
+<li> {{student.name}} is {{student.age}}}years old</li>
+</h3>
+{% endfor %}
+<a class="btn btn-warning" href="{% url 'cbv_demo:update_view' pk=school_detail.pk %}">Update</a>
+<a class="btn btn-danger" href="{% url 'cbv_demo:delete' pk=school_detail.pk %}">Delete</a>
+
+{% endblock body_block %}
